@@ -43,6 +43,7 @@
             <th>Name</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>More</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)) {?>
             <tr>
@@ -50,6 +51,10 @@
                 <td><?php echo $row['name']?></td>
                 <td><?php echo $row['quantity']?></td>
                 <td><?php echo $row['price']?></td>
+                <td>
+                  <a href="update.php?id=<?php echo $row['id']?>" class="btn btn-warning">Update Product</a>
+                  <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger">Delete Product</a>
+                </td>
             </tr>
         <?php } ?>
     
